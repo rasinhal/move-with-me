@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Gentle, camera-guided tai chi sessions. Your video never leaves your device." />
+    <title>Move With Me</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Move With Me</h1>
+      <p class="tagline">Gentle tai chi, guided by your camera</p>
+    </header>
+
+    <main class="layout">
+      <section class="stage-column" aria-label="Camera view">
+        <div class="stage" id="stage" data-state="idle">
+          <video id="video" class="mirrored" playsinline muted aria-hidden="true"></video>
+          <canvas id="overlay" class="mirrored" aria-hidden="true"></canvas>
+          <div class="stage-placeholder" id="placeholder">
+            <p>Your camera picture will appear here.</p>
+          </div>
+        </div>
+
+        <p class="status" id="status" role="status" aria-live="polite" data-tone="neutral">
+          Press <strong>Start camera</strong> when you are ready.
+        </p>
+
+        <div class="controls">
+          <button type="button" id="start" class="button primary">Start camera</button>
+          <button type="button" id="stop" class="button" hidden>Stop camera</button>
+          <label class="quality">
+            <span>Tracking quality</span>
+            <select id="quality">
+              <option value="full" selected>Best accuracy</option>
+              <option value="lite">Faster (for older computers)</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <aside class="side-column">
+        <section class="card" aria-labelledby="before-heading">
+          <h2 id="before-heading">Before you start</h2>
+          <ul class="tips">
+            <li>Clear a space about two steps wide around you.</li>
+            <li>Stand two to three metres back so the camera sees you from head to feet.</li>
+            <li>Face a window or lamp so your body is well lit.</li>
+            <li>Keep a sturdy chair nearby for balance if you need it.</li>
+          </ul>
+          <p class="privacy">
+            <strong>Your privacy:</strong> the video is processed in this browser and is never uploaded or
+            recorded.
+          </p>
+        </section>
+
+        <section class="card" aria-labelledby="joints-heading">
+          <h2 id="joints-heading">Joint angles</h2>
+          <p class="hint">Bend an arm or a knee to see the numbers change. These will be used to check each move.</p>
+          <dl class="joints" id="joints"></dl>
+          <p class="meta" id="meta"></p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Move gently and within a comfortable range. Stop if you feel pain, dizziness or shortness of breath. This
+        prototype is not medical advice.
+      </p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

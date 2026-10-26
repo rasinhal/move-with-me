@@ -1,0 +1,26 @@
+{
+  "name": "move-with-me",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Browser prototype that tracks your body with the camera and guides a gentle tai chi session.",
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/copy-wasm.mjs",
+    "dev": "node scripts/copy-wasm.mjs && vite",
+    "build": "node scripts/copy-wasm.mjs && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "1.0.1"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vitest": "5.0.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
