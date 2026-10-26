@@ -19,7 +19,12 @@ Planned next: a library of beginner tai chi moves with standard, chair-supported
 reduced-range versions (step 2), a guided session with on-screen and voice cues and a calorie
 estimate (step 3), and a profile with safety limits (step 4).
 
-## Running it
+## Try it
+
+Open **https://rasinhal.github.io/move-with-me/** in Chrome, Edge, Firefox or Safari, allow the
+camera, and press **Start camera**. The site is rebuilt automatically whenever `main` changes.
+
+## Running it on your own computer
 
 You need [Node.js](https://nodejs.org/) 20 or newer.
 
